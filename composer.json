@@ -1,0 +1,21 @@
+{
+    "name": "carlosrhedney/kawasaki",
+    "description": "Cadastro de peças automotivas",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kawasaki\\": "vendor\\kawasaki\\php-classes\\src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carlos Rhedney",
+            "email": "twisterpsa@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "slim/slim":"3.0.0",
+        "rain/raintpl":"3.0.0"
+    }
+}
