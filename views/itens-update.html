@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section" style="margin-top: 100px">
   <div class="container">
     <div class="row"><p></p></div>
   </div>
@@ -12,23 +12,28 @@
         <div class="box-header with-border">
           <h3 class="box-title">Editar Peça</h3>
         </div>
+        {if="$error != ''"}
+        <div class="alert alert-danger" role="alert">
+          {$error}
+        </div>
+        {/if}
         <form role="form" action="/update/{$item.iditem}" method="post">
           <div class="box-body">
             <div class="form-group">
               <label for="item">Nome do item</label>
-              <input type="text" class="form-control" id="item" name="item" placeholder="Digite o nome do item" value="{$item.item}">
+              <input type="text" class="form-control" id="item" name="item" placeholder="Digite o nome do item" value="{$item.item}" required="required">
             </div>
             <div class="form-group">
               <label for="codigo">Código do item</label>
-              <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Digite o código do item" value="{$item.codigo}">
+              <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Digite o código do item" value="{$item.codigo}"  required="required">
             </div>
             <div class="form-group">
               <label for="descricao">Descrição do item</label>
-              <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição do item" value="{$item.descricao}">
+              <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição do item" value="{$item.descricao}" required="required">
             </div>
             <div class="form-group">
               <label for="preco">Preço</label>
-              <input type="number" class="form-control" id="preco" name="preco" step="0.01" placeholder="0.00" value="{$item.preco}">
+              <input type="number" class="form-control" id="preco" name="preco" step="0.01" placeholder="0.00" value="{$item.preco}" required="required">
             </div>
           </div>
           <div class="box-footer">

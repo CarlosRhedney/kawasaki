@@ -1,6 +1,6 @@
 <div class="section">
   <div class="container">
-    <div class="row"><p></p></div>
+    <div class="row"><p style="margin-top: 100px"></p></div>
   </div>
 </div>
 <div class="content">
@@ -13,7 +13,7 @@
       </div>
       <div>
         <div>
-          <a href="/create" class="btn btn-success">Cadastrar Peça</a>
+          <a href="/create" class="btn btn-success">Cadastrar</a>
         </div>
 
         <div class="box-body no-padding">
@@ -35,7 +35,7 @@
                 <td>{$value.item}</td>
                 <td>{$value.codigo}</td>
                 <td>{$value.descricao}</td>
-                <td>{$value.preco}</td>
+                <td>{function="formatPrice($value.preco)"}</td>
                 <td>
                   <a href="/update/{$value.iditem}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
                   <a href="/delete/{$value.iditem}" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>

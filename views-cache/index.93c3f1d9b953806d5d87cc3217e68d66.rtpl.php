@@ -1,6 +1,6 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><div class="section">
   <div class="container">
-    <div class="row"><p></p></div>
+    <div class="row"><p style="margin-top: 100px"></p></div>
   </div>
 </div>
 <div class="content">
@@ -13,7 +13,7 @@
       </div>
       <div>
         <div>
-          <a href="/create" class="btn btn-success">Cadastrar Peça</a>
+          <a href="/create" class="btn btn-success">Cadastrar</a>
         </div>
 
         <div class="box-body no-padding">
@@ -35,7 +35,7 @@
                 <td><?php echo htmlspecialchars( $value1["item"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                 <td><?php echo htmlspecialchars( $value1["codigo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                 <td><?php echo htmlspecialchars( $value1["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                <td><?php echo htmlspecialchars( $value1["preco"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                <td><?php echo formatPrice($value1["preco"]); ?></td>
                 <td>
                   <a href="/update/<?php echo htmlspecialchars( $value1["iditem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
                   <a href="/delete/<?php echo htmlspecialchars( $value1["iditem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>

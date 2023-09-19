@@ -1,5 +1,6 @@
 <?php
 require_once("vendor/autoload.php");
+require_once("function.php");
 
 use Psr\Http\Message\REsponseInterface AS Response;
 use Psr\Http\Message\ServerRequestInterface AS Request;
@@ -32,7 +33,9 @@ $app->get('/create', function(Request $request, Response $response, array $args)
 
 	$page = new Page();
 
-	$page->setTpl("itens-create");
+	$page->setTpl("itens-create", [
+		"error"=>Item::getMsgError()
+	]);
 
 });
 
@@ -59,7 +62,8 @@ $app->get('/update/{iditem}', function(Request $request, Response $response, arr
 	$page = new Page();
 
 	$page->setTpl("itens-update", [
-		"item"=>$item->getValues()
+		"item"=>$item->getValues(),
+		"error"=>Item::getMsgError()
 	]);
 
 });

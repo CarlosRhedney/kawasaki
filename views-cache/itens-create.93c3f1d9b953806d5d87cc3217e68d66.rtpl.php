@@ -1,4 +1,4 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><div class="section">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><div class="section" style="margin-top: 100px">
   <div class="container">
     <div class="row"><p></p></div>
   </div>
@@ -7,7 +7,7 @@
 <section class="content">
   <div class="row">
     <div class="col-md-2"></div>
-  	<div class="col-md-8">
+  	<div class="col-md-8"><span class="border border-danger">
   		<div class="box box-success">
         <div class="box-header with-border">
           <h3 class="box-title">Nova Peça</h3>
@@ -16,28 +16,27 @@
           <div class="box-body">
             <div class="form-group">
               <label for="item">Nome do item</label>
-              <input type="text" class="form-control" id="item" name="item" placeholder="Digite o nome do item">
+              <input type="text" class="form-control" id="item" name="item" placeholder="Digite o nome do item" required="required">
             </div>
             <div class="form-group">
               <label for="codigo">Código do item</label>
-              <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Digite o código do item">
+              <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Digite o código do item" required="required">
             </div>
             <div class="form-group">
               <label for="descricao">Descrição do item</label>
-              <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite uma descrição do item">
+              <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite uma descrição do item" required="required">
             </div>
             <div class="form-group">
               <label for="price">Preço</label>
-              <input type="number" class="form-control" id="price" name="preco" step="0.01" placeholder="0.00">
+              <input type="number" class="form-control" id="price" name="preco" step="0.01" placeholder="0.00" required="required">
             </div>
           </div>
           <div class="box-footer">
             <button type="submit" class="btn btn-success">Cadastrar</button>
-            <button src="/" class="btn btn-primary">Voltar</button>
           </div>
         </form>
       </div>
-  	</div>
+  	</div></span>
     <div class="col-md-2"></div>
   </div>
 </section>
