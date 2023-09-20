@@ -6,7 +6,6 @@ use \Kawasaki\Model;
 
 class Item extends Model
 {
-	const SESSION_ERROR = "ItemSaveError";
 
 	public static function listAll()
 	{
@@ -58,28 +57,14 @@ class Item extends Model
 
 	}
 
-	public static function setMsgError($msg)
+	public static function search($search)
 	{
 
-		$_SESSION[Item::SESSION_ERROR] = $msg;
+		$sql = new Sql();
 
-	}
-
-	public static function getMsgError()
-	{
-
-		$msg = (isset($_SESSION[Item::SESSION_ERROR]) && $_SESSION[Item::SESSION_ERROR]) ? $_SESSION[Item::SESSION_ERROR] : "";
-
-		Item::clearMsgError();
-
-		return $msg;
-
-	}
-
-	public static function clearMsgError()
-	{
-
-		$_SESSION[Item::SESSION_ERROR] = NULL;
+		return $sql->select("SELECT * FROM tb_itens WHERE item LIKE :search", [
+			":search"=>'%' .$search. '%'
+		]);
 
 	}
 

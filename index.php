@@ -19,12 +19,21 @@ $app = new App($config);
 
 $app->get('/', function(Request $request, Response $response, array $args){
 
+	$search = (isset($_GET["search"])) ? $_GET["search"] : "";
+
+	if($search !== ""){
+
+		Item::search($search);
+
+	}
+
 	$itens = Item::listAll();
 
 	$page = new Page();
 
 	$page->setTpl("index", [
-		"itens"=>$itens
+		"itens"=>$itens,
+		"search"=>$search
 	]);
 
 });
@@ -33,9 +42,7 @@ $app->get('/create', function(Request $request, Response $response, array $args)
 
 	$page = new Page();
 
-	$page->setTpl("itens-create", [
-		"error"=>Item::getMsgError()
-	]);
+	$page->setTpl("itens-create");
 
 });
 
@@ -62,8 +69,7 @@ $app->get('/update/{iditem}', function(Request $request, Response $response, arr
 	$page = new Page();
 
 	$page->setTpl("itens-update", [
-		"item"=>$item->getValues(),
-		"error"=>Item::getMsgError()
+		"item"=>$item->getValues()
 	]);
 
 });

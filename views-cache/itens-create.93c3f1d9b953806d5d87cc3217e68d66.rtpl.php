@@ -7,7 +7,7 @@
 <section class="content">
   <div class="row">
     <div class="col-md-2"></div>
-  	<div class="col-md-8"><span class="border border-danger">
+  	<div class="col-md-8">
   		<div class="box box-success">
         <div class="box-header with-border">
           <h3 class="box-title">Nova Peça</h3>
@@ -36,7 +36,7 @@
           </div>
         </form>
       </div>
-  	</div></span>
+  	</div>
     <div class="col-md-2"></div>
   </div>
 </section>

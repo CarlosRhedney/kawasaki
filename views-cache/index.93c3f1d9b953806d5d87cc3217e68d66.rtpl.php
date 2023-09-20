@@ -13,7 +13,17 @@
       </div>
       <div>
         <div>
-          <a href="/create" class="btn btn-success">Cadastrar</a>
+          <a href="/create" class="btn btn-success"><i class="glyphicon glyphicon-pencil"></i> Cadastrar</a>
+          <div class="box-tools pull-right">
+            <form action="/">
+              <div class="input-group input-group-sm" style="width: 150px">
+                <input type="text" name="search" class="form-control pull-right" placeholder="Pesquisar" value="<?php echo htmlspecialchars( $search, ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
 
         <div class="box-body no-padding">
@@ -25,7 +35,7 @@
                 <th>Código</th>
                 <th>Descrição</th>
                 <th>Preço</th>
-                <th style="width: 140px">&nbsp;</th>
+                <th style="width: 150px">&nbsp;</th>
               </tr>
             </thead>
             <tbody>
@@ -37,8 +47,8 @@
                 <td><?php echo htmlspecialchars( $value1["descricao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                 <td><?php echo formatPrice($value1["preco"]); ?></td>
                 <td>
-                  <a href="/update/<?php echo htmlspecialchars( $value1["iditem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                  <a href="/delete/<?php echo htmlspecialchars( $value1["iditem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                  <a href="/update/<?php echo htmlspecialchars( $value1["iditem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                  <a href="/delete/<?php echo htmlspecialchars( $value1["iditem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></i> Excluir</a>
                 </td>
               </tr>
               <?php } ?>

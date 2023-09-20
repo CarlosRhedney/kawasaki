@@ -12,11 +12,6 @@
         <div class="box-header with-border">
           <h3 class="box-title">Editar Peça</h3>
         </div>
-        <?php if( $error != '' ){ ?>
-        <div class="alert alert-danger" role="alert">
-          <?php echo htmlspecialchars( $error, ENT_COMPAT, 'UTF-8', FALSE ); ?>
-        </div>
-        <?php } ?>
         <form role="form" action="/update/<?php echo htmlspecialchars( $item["iditem"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post">
           <div class="box-body">
             <div class="form-group">
